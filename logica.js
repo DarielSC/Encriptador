@@ -44,9 +44,13 @@ function desencriptar(stringDesencriptada){
     return stringDesencriptada
 }
 
-function copiar(){
+function copiar() {
     var contenido = document.querySelector(".mensaje");
-    contenido.select()
-    document.execCommand("cut") 
-    swal("¡Bien!", "Se copió con exito", "success");
-}
+    contenido.select();
+  
+    if (document.execCommand("copy")) {
+      swal("¡Bien!", "Se copió con éxito", "success");
+    } else {
+      swal("¡Error!", "No se pudo copiar", "error");
+    }
+  }
